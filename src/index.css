@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300..700&family=Staatliches&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.circle{
+    height: 500px;
+    width: 400px;
+    background-color: white;
+    border-radius: 22% 78% 63% 37% / 30% 32% 68% 70% ;
+}
+ @media print {
+    #no-print{
+        display: none;
+    }
+    
+#print {
+    width :220mm;
+    margin-top: -100px;
+    overflow: hidden; 
+    padding-top: 0mm;
+    padding-bottom: 20mm;
+    padding-left: 0mm;
+  }
+  body{
+    margin: 0mm;
+    padding: 0mm;
+    box-shadow: none;
+    
+  }
+  #print * {
+    font-size: 12pt;
+  }
+  
+
+ 
+
+  #print table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  #print table th, .print table td {
+    border: 1pt solid black;
+    padding: 2mm;
+  }
+ }
+ @page{
+    size: auto;
+    margin: 0mm;
+ }
