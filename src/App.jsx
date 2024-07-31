@@ -6,11 +6,8 @@ import Template from './Components/Template'
 import Examples from './Components/Examples'
 import ContactUs from './Components/ContactUs'
 import Footer from './Components/Footer'
-
 import Render from './Components/Preview/Render'
-import Map from './Components/Preview/MapTemplate'
-import BusinessPreview from './Components/Preview/Business/BusinessPreview'
-import BusinessPreviewC from './Components/Preview/Business/BusinessPreviewC'
+
 
 function App() {
   return (
@@ -22,12 +19,11 @@ function App() {
         <Route path='/Templates' element={<Template/>}></Route>
         <Route path='/Examples' element={<Examples/>}></Route>
         <Route path='/Contact' element={<ContactUs/>}></Route>
-        
         <Route path='/:templateId' element={<Render/>}>
        
       
         </Route> 
-        <Route path= '/Preview/Business' element={<BusinessPreview/>}></Route>
+       
       </Routes>
       <Footer/>
       

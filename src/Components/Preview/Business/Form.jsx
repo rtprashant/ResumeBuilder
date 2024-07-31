@@ -40,6 +40,11 @@ function Form() {
     )
 
   }
+
+  const handleDowmload = (e)=>{
+    e.preventDefault()
+    window.print()
+  }
   const navigate = useNavigate();
   const handleClick = (event) => {
     event.preventDefault();
@@ -855,13 +860,13 @@ function Form() {
               <button onClick={handlePrevClick}
                 className='border border-[#656E72] rounded-lg px-5 mt-4   font-staatliches text-[25px] hover:text-white hover:bg-[#264C42] transition-all'>
                 Previous</button>
-              <NavLink
-              to='/Preview/Business'
-              onClick={handleClick} >
+              
+             
               <button 
-                className='border border-[#656E72] rounded-lg px-5 mt-4  font-staatliches text-[25px] hover:text-white hover:bg-[#264C42] transition-all'>
-                Finish</button>
-              </NavLink>
+               onClick={handleDowmload} 
+                className='border border-[#656E72] rounded-lg px-5 mt-4  font-staatliches text-[25px] hover:text-white hover:bg-blue-500 transition-all'>
+                Download</button>
+           
 
 
             </div>
