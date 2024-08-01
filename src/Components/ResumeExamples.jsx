@@ -1,5 +1,5 @@
 import React from 'react'
-import exmapleImg from '../assets/Example3.jpg'
+import exmapleImg from '../assets/Example3.jpeg'
 
 function ResumeExamples() {
   return (

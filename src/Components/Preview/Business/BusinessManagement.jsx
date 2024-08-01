@@ -18,12 +18,11 @@ function BusinessManagement() {
           <div id='no-print'>
             <Form />
           </div>
-        {/* <Form /> */}
+   
         <div id="print">
           <Content />
         </div>
-        {/* <Content /> */}
-
+      
         </div>
         
         

@@ -1,9 +1,9 @@
 import React from 'react'
 import '../index.css'
-import exmapleImg from '../assets/Example3.jpg'
+import exmapleImg from '../assets/Example3.jpeg'
 import firstImg from '../assets/Exampe1.jpg';
 import secondImg from '../assets/Example2.jpg';
-import thirdImg from '../assets/Example3.jpg';
+import thirdImg  from '../assets/Example3.jpeg'
 import fourthImg from '../assets/home1.jpg';
 import fifthImg from '../assets/home2.jpg';
 

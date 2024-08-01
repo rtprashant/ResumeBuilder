@@ -19,7 +19,7 @@ function ResumeCards({img , templateId}) {
             className="relative h-[38vw]  whitespace-normal w-[25vw] ml-3 mt-10 cursor-pointer bg-white bg-opacity-50 shadow-lg rounded-lg p-6 bg-blend-soft-lighten">
 
 
-            <div><img src={img} alt="" /></div>
+            <div><img className="h-[30vw] w-[]" src={img} alt="" /></div>
             <div className='flex justify-center mt-10  text-[1.5vw] '><h1></h1></div>
             <div className='mt-[-20vw] ml-[4vw]'>
             <NavLink 

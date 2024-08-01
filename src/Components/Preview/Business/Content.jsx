@@ -62,7 +62,7 @@ function Content() {
     <div>
       
       <div className=' w-full p-16 mr-[-5vw] bg- text-black bg mt-[0px]'>
-        <h1 className='resume-heading font-bold font-sans leading-none text-[3vw]'>
+        <h1 className='resume-heading resume-name font-bold font-sans leading-none text-[3vw]'>
           {data.name ? data.name : "Henrittea Mitchell"}
 
         </h1>

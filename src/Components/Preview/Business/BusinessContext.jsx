@@ -73,6 +73,7 @@ function BusinessContext({ children }) {
         techs : [],
         project : initialProject,
         projects : [],
+        img : ''
 
     })
     const addProject = ()=>{
@@ -173,6 +174,11 @@ function BusinessContext({ children }) {
             educations: prev.educations.filter(edu=>edu.id !== id)
             }))
     }
+    const removeImg = (e)=>{
+       
+        setData(prev=>({...prev,img:''}))
+       
+    }
     const removeTech =(id)=>{
         setData(prev=>({
             ...prev,
@@ -195,7 +201,7 @@ function BusinessContext({ children }) {
         });
     };
     return (
-        <userContext.Provider value={{ data , setData, addKeyCompetency, removeKeyCompetency ,removeExperience ,addExperience ,clearExperience ,resetExperience ,resetActivity,clearActivity ,addActivity ,removeActivity ,addEducation ,clearEducation ,removeEducation ,resetEducation ,removeTech,addTech ,resetTech,clearTech ,addProject,removeProject, resetProject ,clearProject}}>
+        <userContext.Provider value={{ data , setData, addKeyCompetency, removeKeyCompetency ,removeExperience ,addExperience ,clearExperience ,resetExperience ,resetActivity,clearActivity ,addActivity ,removeActivity ,addEducation ,clearEducation ,removeEducation ,resetEducation ,removeTech,addTech ,resetTech,clearTech ,addProject,removeProject, resetProject ,clearProject ,removeImg}}>
             {children}
         </userContext.Provider>
 
