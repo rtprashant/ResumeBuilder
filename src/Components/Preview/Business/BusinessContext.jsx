@@ -52,6 +52,7 @@ function BusinessContext({ children }) {
         address: '',
         heading1: '',
         discription1: '',
+        post:'',
         keycompetencies: [
             "Process improvement",
             "Report writing and presenting",

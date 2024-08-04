@@ -7,9 +7,10 @@ import Examples from './Components/Examples'
 import ContactUs from './Components/ContactUs'
 import Footer from './Components/Footer'
 import Render from './Components/Preview/Render'
-
+import LocomotiveScroll from "locomotive-scroll";
 
 function App() {
+  const locomotiveScroll = new LocomotiveScroll();
   return (
     <div className='overflow-x-hidden'>
       <Navbaar/>

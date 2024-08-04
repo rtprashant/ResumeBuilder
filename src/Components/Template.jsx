@@ -1,13 +1,13 @@
 import React from 'react'
 import ResumeCards from './ResumeCards'
-import firstImg from '../assets/Exampe1.jpg';
+import firstImg from '../assets/Example1.png';
 import secondImg from '../assets/Example2.jpg';
-import thirdImg from '../assets/Example3.jpeg';
+import thirdImg from '../assets/Example3.png';
 import fourthImg from '../assets/home1.jpg';
 import fifthImg from '../assets/home2.jpg';
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ResumeExamples from './ResumeExamples';
+
 
 function Template() {
   const [currentSlide, setCurrentSlide] = useState(0);

@@ -40,6 +40,15 @@
   #print .resume-heading1{
     font-size: 18pt;
   }
+  #print .polgonprint{
+    margin-top: 18vw;
+    height: 20vw;
+    width: 31vw;
+  }
+  #print .polgonprint1{
+    margin-top: -2.4vw;
+  
+  }
   
   #print table {
     width: 100%;
@@ -54,4 +63,9 @@
  @page{
     size: auto;
     margin: 0mm;
+ }
+
+
+ .polygon{
+  clip-path: polygon(0 60%, 0% 100%, 100% 100%);
  }
