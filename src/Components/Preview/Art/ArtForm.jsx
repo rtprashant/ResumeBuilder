@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState ,useRef} from 'react'
 import { userContext } from '../Business/BusinessContext';
 import {NavLink ,  useNavigate} from 'react-router-dom'
 
 function Form() {
-  const { data, setData, addKeyCompetency, removeKeyCompetency, removeExperience, addExperience, clearExperience, resetExperience, resetActivity, clearActivity, addActivity, removeActivity, addEducation, clearEducation, removeEducation, resetEducation, removeTech, addTech, resetTech, clearTech ,addProject,removeProject, resetProject ,clearProject } = useContext(userContext);
+  const { data, setData, addKeyCompetency, removeKeyCompetency,removeImg, removeExperience, addExperience, clearExperience, resetExperience, resetActivity, clearActivity, addActivity, removeActivity, addEducation, clearEducation, removeEducation, resetEducation, removeTech, addTech, resetTech, clearTech ,addProject,removeProject, resetProject ,clearProject } = useContext(userContext);
   
   const [website, setwebsite] = useState('no');
   const [exp, setExp] = useState('yes')
@@ -14,6 +14,25 @@ function Form() {
   const [techSkill, setTechSkill] = useState('');
   const [isProject ,setIsProject ] = useState('yes')
   const [project , setProject] = useState('')
+  const fileInputRef = useRef(null);
+
+  const onFileChange = (event) => {
+    const selectedFile = event.target.files[0];
+    if (selectedFile) {
+      const objectUrl = URL.createObjectURL(selectedFile);
+      setData(prevData => ({
+        ...prevData,
+        img: objectUrl
+      }));
+    }
+  };
+  const handleRemoveImage = (e) => {
+    e.preventDefault()
+    removeImg();
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+  };
   const handleProjectChange = (e)=>{
     const value = e.target.value;
     setIsProject(value);
@@ -201,6 +220,22 @@ function Form() {
                 onChange={handleInputChange}
 
               />
+              
+
+            </div>
+
+            <div className='mt-5'>
+              <label className='font-staatliches text-[20px] text-[#264C42]' htmlFor="name">Job Role</label><br />
+              <input
+                placeholder='Enter Your Job Role'
+                className='border w-full font-spaceGrotesk p-1 rounded-lg border-[#656E72] focus:border-[#264C42]'
+                type="text"
+                name="post"
+                value={data.post}
+                onChange={handleInputChange}
+
+              />
+              
 
             </div>
             <div className='mt-5'>
@@ -285,35 +320,6 @@ function Form() {
 
               />
             </div>
-
-
-            <button onClick={handleNextClick}
-              className='border border-[#656E72] rounded-lg px-5 mt-4 ml-[39vw] py- font-staatliches text-[25px] hover:text-white hover:bg-[#264C42] transition-all'>
-              NEXT</button>
-          </div>
-
-        )
-
-
-      case 2:
-        return (
-          <div>
-            <div>
-              <h1 className='font-staatliches text-[2vw] text-[#264C42]'>Additional Info</h1>
-              <p className='font-spaceGrotesk text-[#656E72] mt-[-1.5vh]'>Describe Yourself</p>
-            </div>
-            <div className='mt-5'>
-              <label className='font-staatliches text-[20px] text-[#264C42]' htmlFor='heading1'>Edit Heading</label><br />
-              <input
-                className='border w-full font-spaceGrotesk p-1 rounded-lg border-[#656E72] focus:border-[#264C42]'
-                placeholder='eg. BUSINESS MANAGEMENT & ANALYSIS'
-                type="text"
-                name="heading1"
-                value={data.heading1}
-                onChange={handleInputChange}
-
-              />
-            </div>
             <div className='mt-5'>
               <label className='font-staatliches text-[20px] text-[#264C42]' htmlFor="discription1">Discription</label><br />
               <textarea
@@ -326,56 +332,27 @@ function Form() {
               />
             </div>
             <div className='mt-5'>
-              <label className='font-staatliches text-[20px] text-[#264C42]' htmlFor='heading1'>KEY COMPETENCIES</label><br />
-              <div className='flex items-center gap-2'>
-                <input
-                  type="text"
-                  value={newSkill}
-                  onChange={(e) => setNewSkill(e.target.value)}
-                  className='border w-full font-spaceGrotesk p-1 rounded-lg border-[#656E72] focus:border-[#264C42]'
-                  placeholder="you can add atmost 9 soft skills so remove some or all before adding more"
-                />
-                <button
-                  type="button"
-                  onClick={handleAddSkill}
-                  className='text-green-500 text-[2vw]'
-                >
-                  +
-                </button>
-              </div>
-
-              {data.keycompetencies.map((competency, index) => (
-                <div key={index} className='flex items-center gap-2 mt-2'>
-                  <p className='font-spaceGrotesk'>{competency}</p>
-                  <button
-                    type="button"
-                    onClick={() => removeKeyCompetency(index)}
-                    className='text-red-500 mr-0  text-[20px]'
-                  >
-                    x
-                  </button>
-                </div>
-              ))}
-
-
-
+                <label htmlFor="img" className='font-staatliches text-[20px] text-[#264C42]'>Upload Your Image</label><br />
+                <input type="file" 
+                    ref={fileInputRef} 
+                    className='border w-full font-spaceGrotesk p-1 rounded-lg border-[#656E72] focus:border-[#264C42] '
+                    accept="image/*" onChange={onFileChange} />
+                    <button onClick={handleRemoveImage } className='text-red-500'>Remove
+                        
+                    </button>
             </div>
 
 
-            <div className='flex justify-between'>
-              <button onClick={handlePrevClick}
-                className='border border-[#656E72] rounded-lg px-5 mt-4   font-staatliches text-[25px] hover:text-white hover:bg-[#264C42] transition-all'>
-                Previous</button>
-              <button onClick={handleNextClick}
-                className='border border-[#656E72] rounded-lg px-5 mt-4  font-staatliches text-[25px] hover:text-white hover:bg-[#264C42] transition-all'>
-                NEXT</button>
-
-
-            </div>
+            <button onClick={handleNextClick}
+              className='border border-[#656E72] rounded-lg px-5 mt-4 ml-[39vw] py- font-staatliches text-[25px] hover:text-white hover:bg-[#264C42] transition-all'>
+              NEXT</button>
           </div>
 
         )
-      case 3:
+
+
+     
+      case 2:
         return (
           <div>
             <div>
@@ -465,7 +442,7 @@ function Form() {
                     </div>
                     <div className='mt-5'>
                       <textarea
-                        placeholder='Discription'
+                        placeholder='Discription (Click on Add Experience to add a experience)'
                         className='border w-full font-spaceGrotesk p-1 h-36 rounded-lg border-[#656E72] focus:border-[#264C42]'
                         type="text"
                         name='description'
@@ -531,7 +508,7 @@ function Form() {
           </div>
         )
 
-      case 4:
+      case 3:
         return (
           <div>
             <div>
@@ -558,6 +535,7 @@ function Form() {
                   <input
                     className='border w-full font-spaceGrotesk p-1 rounded-lg border-[#656E72] focus:border-[#264C42]'
                     type="text"
+                    placeholder='Click on Add Education to add a education '
                     name='institution'
                     value={newEdu.institution}
                     onChange={handleInputChangeEdu} />
@@ -644,6 +622,7 @@ function Form() {
                           type="text"
                           name='description'
                           value={newAct.description}
+                          placeholder='Click on Add Activity to add a activity'
                           onChange={handleInputChangeAct} />
                       </div>
                       <button
@@ -721,6 +700,7 @@ function Form() {
                 <div>
                   <input type="text"
                     name="skill"
+                    placeholder='Click on Add Skill to add a skill '
                     value={techSkill.skill}
                     onChange={handleInputChnageTech}
                     className='border w-full font-spaceGrotesk p-1 rounded-lg border-[#656E72] focus:border-[#264C42]'
@@ -768,7 +748,7 @@ function Form() {
 
           </div>
         )
-      case 5:
+      case 4:
         return (
           <div>
             <div>
@@ -907,3 +887,4 @@ function Form() {
 }
 
 export default Form
+

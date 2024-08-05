@@ -42,8 +42,10 @@ function SalesContent() {
         "description": "This is project 1",
     }]
     return (
-        <div>
+        <div className=''>
+                   
             <div className='flex w-full flex-1 overflow-hidden border border-[#323B4C]'>
+         
                 <div className='  p- w-[35%] h-auto  '>
                     <div className='flex flex-col gap-5 relative'>
                     <div className='bg-[#F1F1F1] p-8 h-[300px]'>

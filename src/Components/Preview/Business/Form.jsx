@@ -48,10 +48,8 @@ function Form() {
   const navigate = useNavigate();
   const handleClick = (event) => {
     event.preventDefault();
-    // Your custom logic here, e.g., form validation, state updates, etc.
+    
     console.log("Button clicked!");
-
-    // Navigate to the preview page after your custom logic
     navigate('/Preview/Business');
   };
 

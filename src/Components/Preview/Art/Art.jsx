@@ -3,7 +3,7 @@ import { BusinessContext } from '../Business/BusinessContext'
 import Form from './ArtForm'
 import Content from '../Business/Content'
 import ArtContent from './ArtContent'
-import ImageUploader from './ImageUploader'
+
 function Art() {
   return (
     <BusinessContext>
@@ -19,9 +19,7 @@ function Art() {
           </div>
           {/* <Form /> */}
           <div id="print">
-          <div>
-            <ImageUploader/>
-          </div>
+         
             <ArtContent />
           </div>
          

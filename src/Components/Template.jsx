@@ -3,7 +3,7 @@ import ResumeCards from './ResumeCards'
 import firstImg from '../assets/Example1.png';
 import secondImg from '../assets/Example2.jpg';
 import thirdImg from '../assets/Example3.png';
-import fourthImg from '../assets/home1.jpg';
+import fourthImg from '../assets/Example4.png';
 import fifthImg from '../assets/home2.jpg';
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

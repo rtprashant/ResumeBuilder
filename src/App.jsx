@@ -9,26 +9,28 @@ import Footer from './Components/Footer'
 import Render from './Components/Preview/Render'
 import LocomotiveScroll from "locomotive-scroll";
 
+
 function App() {
   const locomotiveScroll = new LocomotiveScroll();
   return (
     <div className='overflow-x-hidden'>
-      <Navbaar/>
+      <Navbaar />
       <Routes>
-      <Route path='/' element={<Home/>}></Route>
-        <Route path='/Home' element={<Home/>}></Route>
-        <Route path='/Templates' element={<Template/>}></Route>
-        <Route path='/Examples' element={<Examples/>}></Route>
-        <Route path='/Contact' element={<ContactUs/>}></Route>
-        <Route path='/:templateId' element={<Render/>}>
-       
-      
-        </Route> 
-       
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/Home' element={<Home />}></Route>
+
+        <Route path='/Templates' element={<Template />}></Route>
+        <Route path='/Examples' element={<Examples />}></Route>
+        <Route path='/Contact' element={<ContactUs />}></Route>
+        <Route path='/:templateId' element={<Render />}>
+
+
+        </Route>
+
       </Routes>
-      <Footer/>
-      
-      
+      <Footer />
+
+
     </div>
   )
 }
